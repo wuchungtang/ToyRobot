@@ -4,6 +4,7 @@
 #include "Robot.h"
 #include "CmdProc.h"
 
+//convert string into 10 based integer
 bool StrToInt(const char *Str, int *pOut)
 {
 	char *ptr;
@@ -87,7 +88,6 @@ bool CCmdProc::SplitCmdLine(std::string &cmd, std::vector<std::string> &args)
     while ((pos = cmd.find(" ")) != std::string::npos ||
 			((pos = cmd.find(",")) != std::string::npos) )
 	{
-
 		args.push_back(cmd.substr(0, pos));
         cmd.erase(0, pos + 1); 
     }
